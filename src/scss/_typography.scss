@@ -1,0 +1,80 @@
+.heading {
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+.heading-after {
+	&::after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: -1.5rem;
+		height: 2px;
+		width: 15%;
+		background-color: $primary-blue;
+	}
+}
+
+.heading-primary {
+	@extend .heading;
+	font-size: 4.5rem;
+
+	&-light {
+		color: white;
+	}
+
+	&-dark {
+		color: $almost-black;
+	}
+
+	@media screen and (max-width: 600px) {
+		font-size: 4rem;
+	}
+
+	@media screen and (max-width: 500px) {
+		font-size: 3.2rem;
+	}
+
+	@media screen and (max-width: 400px) {
+		font-size: 2.8rem;
+	}
+}
+
+.heading-secondary {
+	@extend .heading;
+	font-size: 3.5rem;
+
+	&-light {
+		color: white;
+	}
+
+	&-dark {
+		color: $almost-black;
+	}
+
+	@media screen and (max-width: 600px) {
+		font-size: 3.2rem;
+	}
+
+	@media screen and (max-width: 500px) {
+		font-size: 2.7rem;
+	}
+
+	@media screen and (max-width: 400px) {
+		font-size: 2.5rem;
+	}
+}
+
+.heading-tertiary {
+	@extend .heading;
+	font-size: 2.3rem;
+
+	&-light {
+		color: white;
+	}
+
+	&-dark {
+		color: $almost-black;
+	}
+}

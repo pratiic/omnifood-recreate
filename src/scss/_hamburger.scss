@@ -1,0 +1,39 @@
+.hamburger {
+	cursor: pointer;
+	display: none;
+	@extend .z;
+
+	.line {
+		width: 2.7rem;
+		height: 4px;
+		margin-bottom: 3px;
+		background-color: $primary-blue;
+		border-radius: 3px;
+
+		@include trans(transform, 250ms);
+	}
+
+	transition: transform 150ms ease-in;
+
+	&:hover {
+		transform: scale(1.2);
+	}
+
+	@media screen and (max-width: 1300px) {
+		display: block;
+	}
+
+	&.cross {
+		.line:nth-child(3) {
+			display: none;
+		}
+
+		.line:nth-child(1) {
+			transform: rotate(45deg);
+		}
+
+		.line:nth-child(2) {
+			transform: rotate(-45deg) translate(5px, -4px);
+		}
+	}
+}

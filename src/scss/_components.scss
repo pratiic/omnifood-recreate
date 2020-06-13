@@ -1,0 +1,42 @@
+.button {
+	padding: 1rem 2.2rem;
+	background-color: $primary-blue;
+	color: white;
+	border-radius: 3px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	text-transform: capitalize;
+	font-size: 1.65rem;
+	font-weight: 300;
+	@include trans(background-color, 150ms);
+
+	&:hover {
+		background-color: #23405a;
+		box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+	}
+
+	&:active {
+		transform: translateY(1px);
+	}
+
+	&-outline {
+		background-color: transparent;
+		border: 1px solid $primary-blue;
+
+		&:hover {
+			background-color: $primary-blue;
+		}
+	}
+}
+
+.container {
+	max-width: 80%;
+	margin: auto;
+	overflow-x: hidden;
+}
+
+.z {
+	position: relative;
+	z-index: 5;
+}

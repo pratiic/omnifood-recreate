@@ -1,0 +1,101 @@
+.header {
+	overflow-x: hidden;
+	height: 100vh;
+	width: 100%;
+	background-image: url("../../assets/images/hero.jpg");
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	margin-bottom: 8rem;
+
+	&::after {
+		@include overlay(black, 0.7);
+	}
+
+	.navbar {
+		.navbar-inner {
+			@include flex(space-between, center);
+			padding: 3rem 0.5rem;
+
+			.nav-logo {
+				height: 10rem;
+				display: block;
+				@extend .z;
+			}
+
+			.nav-items {
+				@extend .z;
+				@include flex(center, center);
+				.nav-item {
+					margin-left: 4rem;
+					position: relative;
+					padding: 1rem 0;
+					cursor: pointer;
+
+					.nav-link {
+						color: white;
+						font-weight: 600;
+						letter-spacing: 2px;
+					}
+
+					&::after {
+						content: "";
+						position: absolute;
+						left: 0;
+						bottom: 5px;
+						height: 3px;
+						width: 100%;
+						background-color: $primary-blue;
+						transform: scaleX(0);
+						transform-origin: left;
+						@include trans(transform, 150ms);
+					}
+
+					&:hover::after {
+						transform: scaleX(1);
+					}
+				}
+
+				@media screen and (max-width: 1300px) {
+					position: absolute;
+					top: 11rem;
+					right: 0;
+					height: 40rem;
+					min-width: 25rem;
+					padding: 2rem 0;
+					@include flex(flex-start, flex-start);
+					flex-direction: column;
+					z-index: 7;
+					transform: translateX(100%);
+					border-radius: 10px;
+					box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.5);
+					@include trans(transform, 300ms);
+
+					.nav-item {
+						margin-bottom: 3rem;
+					}
+				}
+
+				@media screen and (max-width: 1300px) {
+					background-color: rgba(0, 0, 0, 0.7);
+				}
+
+				&.visible {
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+
+	.display {
+		position: relative;
+		z-index: 5;
+		margin-top: 7rem;
+		padding-bottom: 1rem;
+
+		.button {
+			box-shadow: none;
+			margin-right: 1rem;
+		}
+	}
+}

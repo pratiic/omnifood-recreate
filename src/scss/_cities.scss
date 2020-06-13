@@ -1,0 +1,40 @@
+.cities {
+	padding: 7rem 0;
+
+	.heading-secondary {
+		position: relative;
+		@extend .heading-after;
+	}
+
+	.cities-main {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		grid-gap: 3rem;
+
+		.city {
+			img {
+				width: 100%;
+			}
+
+			.city-info {
+				p {
+					margin-bottom: 1rem;
+
+					i {
+						color: $primary-blue;
+						margin-right: 1rem;
+						font-size: 1.8rem;
+					}
+
+					.city-link {
+						color: $primary-blue;
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+}

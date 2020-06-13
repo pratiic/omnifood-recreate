@@ -1,0 +1,25 @@
+.gallery {
+	padding: 7rem 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+	grid-gap: 3rem;
+
+	.image-container {
+		cursor: pointer;
+		overflow: hidden;
+
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			display: block;
+			border-radius: 5px;
+			box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3);
+			@include trans(transform, 350ms);
+		}
+
+		&:hover img {
+			transform: scale(1.2);
+		}
+	}
+}

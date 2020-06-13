@@ -1,0 +1,33 @@
+.features {
+	margin-bottom: 7rem;
+
+	.heading-secondary {
+		@extend .heading-after;
+		position: relative;
+	}
+
+	.about {
+		max-width: 90rem;
+		margin: 0 auto 5rem auto;
+	}
+
+	.features-main {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		grid-column-gap: 3rem;
+		grid-row-gap: 5rem;
+
+		.feature {
+			svg {
+				height: 5.5rem;
+				width: 5.5rem;
+				fill: $primary-blue;
+				margin-bottom: 1rem;
+			}
+
+			.heading-tertiary {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+}
